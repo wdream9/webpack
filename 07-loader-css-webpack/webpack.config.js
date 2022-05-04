@@ -1,7 +1,7 @@
-
 const path = require('path')
-
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+// 抽离压缩 css
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -23,6 +23,15 @@ module.exports = {
             template: './index.html',
             filename: 'index.html',
             inject: 'body',
+        }),
+        /**
+         * 无参构造会将css文件打包在一起，放在output的path目录下，文件名称默认为 main.css
+         * 
+         * 可以进行配置打包后的文件名称
+         *  filename: 'styles/[contenthash].css'
+         */
+        new MiniCssExtractPlugin({
+            filename: 'styles/[contenthash].css'
         })
     ],
     devServer: {
@@ -67,7 +76,6 @@ module.exports = {
             },
             /**
              * 安装两个插件：
-             * style-loader : js代码将css渲染到 页面 
              * css-loader :  js加载css样式文件
              * less-loader ： less解析css样式文件
              * 顺序不能乱
@@ -75,7 +83,8 @@ module.exports = {
              */
             {
                 test: /\.(css|less)$/,
-                use: ['style-loader', 'css-loader','less-loader']
+                // use: ['style-loader', 'css-loader','less-loader']
+                use: [MiniCssExtractPlugin.loader, 'css-loader','less-loader']
             },
 
         ]
