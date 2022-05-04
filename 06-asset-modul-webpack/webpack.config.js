@@ -31,8 +31,12 @@ module.exports = {
     /**
      * 打包静态资源模块
      * 导出静态资源的形式 
-     *      asset/resource：jpg、png等图片
-     *      asset/inline： 导出资源beta uri （base64文本）
+     *      asset/resource：打包静态资源时 导出资源的（源路径）
+     *      asset/inline： 导出资源 dataurl （base64文本）
+     *      asset/source： 到处资源的源代码
+     *      asset： 在inline 和 resource之间切换
+     * asset：资源文件大小大于 8K，就会创建资源，小于8K就会生成一个base64
+     * 调整临界值
      */
     module:{
         rules: [
@@ -51,6 +55,15 @@ module.exports = {
                 test: /\.txt$/, // 以 .txt 作为拓展名的文件，导入资源的源代码
                 type: 'asset/source',
 
+            },
+            {
+                test: /\.jpg$/, // 以 .jpg 作为拓展名的文件，导入资源的源代码
+                type: 'asset', // 在inline和source之间自动选择
+                parser:{
+                    dataUrlCondition: {
+                        maxSize: 4 * 1024 * 1024,  // 4 M
+                    }
+                }
             },
 
         ]
