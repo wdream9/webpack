@@ -68,7 +68,6 @@ module.exports = {
             {
                 test: /\.txt$/, // 以 .txt 作为拓展名的文件，导入资源的源代码
                 type: 'asset/source',
-
             },
             {
                 test: /\.jpg$/, // 以 .jpg 作为拓展名的文件，导入资源的源代码
@@ -91,6 +90,15 @@ module.exports = {
                 // use: ['style-loader', 'css-loader','less-loader']
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
             },
+            {
+                test:/\.(tsv|csv)$/,
+                use: 'csv-loader'
+            },
+            {
+                test:/\.xml$/,
+                use: 'xml-loader'
+            },
+            
 
         ]
     },
