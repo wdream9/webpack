@@ -33,7 +33,10 @@ module.exports = {
         rules: [
             {
                 test: /\.png$/, // 以 .png 作为拓展名的文件
-                type: 'asset/resource'
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[contenthash][ext]'
+                }
             }
         ]
     }
