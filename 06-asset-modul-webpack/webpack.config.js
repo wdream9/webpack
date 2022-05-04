@@ -28,7 +28,12 @@ module.exports = {
     devServer:{
         static: './dist/*.html'
     },
-    // 打包静态资源模块
+    /**
+     * 打包静态资源模块
+     * 导出静态资源的形式 
+     *      asset/resource：jpg、png等图片
+     *      asset/inline： 导出资源beta uri （base64文本）
+     */
     module:{
         rules: [
             {
@@ -37,6 +42,10 @@ module.exports = {
                 generator: {
                     filename: 'images/[contenthash][ext]'
                 }
+            },
+            {
+                test: /\.svg$/, // 以 .png 作为拓展名的文件
+                type: 'asset/inline',
             }
         ]
     }
