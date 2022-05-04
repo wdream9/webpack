@@ -18,9 +18,10 @@ module.exports = {
          */
         assetModuleFilename: 'images/[contenthash][ext]',
     },
-    // mode: 'development',  // 模式
-    // css样式文件压缩配置
-    mode: 'production',
+    // 模式
+    mode: 'development',  
+    // 生产模式css样式文件压缩配置
+    // mode: 'production',
     devtool: 'inline-source-map',
     plugins: [
         new HtmlWebpackPlugin({

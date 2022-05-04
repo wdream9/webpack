@@ -3,3 +3,8 @@
     width: 100%;
     height: 100%;
 }
+
+/* !important 提高优先级为最高 */
+body {
+    background-image: url(./assets/a.jpg) !important;
+}
