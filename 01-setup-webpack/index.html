@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webpack</title>
+</head>
+<body>
+    <!--
+         helloworld.js与index.js文件加载顺序相反会报错，
+        试想以下如果我们的js文件很多，还需要我们人为的继续径行维护是不行的
+        所以webpack出现了
+        我们需要安装webpack，webpack是构建在node.js上的，所以使用webpack之前首先确保安装node.js
+    
+    -->
+    <script src="./helloworld.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
