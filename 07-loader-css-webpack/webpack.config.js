@@ -5,6 +5,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // 压缩 css
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
+// 加载 toml模块
+const toml = require("toml")
+// 加载yaml
+const yaml = require("yaml")
+// 加载 json5
+const json5 = require("json5")
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -97,6 +103,27 @@ module.exports = {
             {
                 test:/\.xml$/,
                 use: 'xml-loader'
+            },
+            {
+                test:/\.toml$/,
+                use: 'json',
+                parser: {
+                    parse: toml.parse
+                } 
+            },
+            {
+                test:/\.yaml$/,
+                use: 'json',
+                parser: {
+                    parse: yaml.parse
+                } 
+            },
+            {
+                test:/\.json5$/,
+                use: 'json',
+                parser: {
+                    parse: json5.parse
+                } 
             },
             
 
