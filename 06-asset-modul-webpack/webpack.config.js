@@ -44,9 +44,15 @@ module.exports = {
                 }
             },
             {
-                test: /\.svg$/, // 以 .png 作为拓展名的文件
+                test: /\.svg$/, // 以 .svg 作为拓展名的文件
                 type: 'asset/inline',
-            }
+            },
+            {
+                test: /\.txt$/, // 以 .txt 作为拓展名的文件，导入资源的源代码
+                type: 'asset/source',
+
+            },
+
         ]
     }
 
