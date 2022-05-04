@@ -1,7 +1,10 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-// 抽离压缩 css
+// 抽离 css
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+// 压缩 css
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -15,8 +18,9 @@ module.exports = {
          */
         assetModuleFilename: 'images/[contenthash][ext]',
     },
-    mode: 'development',  // 模式
-
+    // mode: 'development',  // 模式
+    // css样式文件压缩配置
+    mode: 'production',
     devtool: 'inline-source-map',
     plugins: [
         new HtmlWebpackPlugin({
@@ -84,9 +88,14 @@ module.exports = {
             {
                 test: /\.(css|less)$/,
                 // use: ['style-loader', 'css-loader','less-loader']
-                use: [MiniCssExtractPlugin.loader, 'css-loader','less-loader']
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
             },
 
+        ]
+    },
+    optimization:{
+        minimizer: [
+            new CssMinimizerPlugin()
         ]
     }
 
