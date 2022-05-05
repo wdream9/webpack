@@ -20,4 +20,7 @@ npx webpack -c ./config/webpack.config.prod.js
 
 启动本地开发服务
 npx webpack server -c ./config/webpack.config.dev.js
+
+安装配置文件合并插件
+npm install webpack-merge -D
 ~~~

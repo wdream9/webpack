@@ -4,8 +4,8 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack server -c ./config/webpack.config.dev.js",
-    "build": "webpack -c ./config/webpack.config.prod.js"
+    "start": "webpack server -c ./config/webpack.config.js --env development",
+    "build": "webpack -c ./config/webpack.config.js --env production"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +20,8 @@
     "terser-webpack-plugin": "^5.3.1",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.9.0"
+    "webpack-dev-server": "^4.9.0",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "loadsh": "^0.0.4"
