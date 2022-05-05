@@ -12,7 +12,7 @@ module.exports = {
         another: './src/another.js',
     },
     output: {
-        filename: 'scripts/[name].bundle.js',
+        filename: 'scripts/[contenthash].js',
         path: path.resolve(__dirname, '../dist'),
         clean: true,
         assetModuleFilename: 'images/[contenthash][ext]',
@@ -67,6 +67,10 @@ module.exports = {
                 }
             }
         }
+    },
+    // 去掉性能提示 警告
+    performance:{
+        hints: false
     }
 
 }

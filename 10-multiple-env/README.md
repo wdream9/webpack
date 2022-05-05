@@ -15,7 +15,7 @@ npm webpack --env production --env global=local
 读取开发环境配置文件
 npx webpack -c ./config/webpack.config.dev.js
 
-读取开发环境配置文件
+读取生产环境配置文件
 npx webpack -c ./config/webpack.config.prod.js
 
 启动本地开发服务
