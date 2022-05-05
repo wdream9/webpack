@@ -7,13 +7,20 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = {
     /**
-     * 项目打包入口，
-     * 代码分离采用的方式 ，第一种通过入口文件进行代码分离
+     * 代码分离采，
+     * 第二种将公共的依赖抽离出来，单独形成一个chunk，然后由html进行引用
      */
     // entry: './src/index.js',
     entry:{
-        index:'./src/index.js',
-        another: './src/another.js'
+        index:{
+            import: './src/index.js',
+            dependOn: 'shared'
+        },
+        another: {
+            import: './src/another.js',
+            dependOn: 'shared'
+        },
+        shared: 'loadsh'
     },
     output: {
         // filename: 'bundle.js',
@@ -61,7 +68,7 @@ module.exports = {
     optimization:{
         minimizer: [
             new CssMinimizerPlugin()
-        ]
+        ],
     }
 
 }
