@@ -27,7 +27,8 @@ module.exports = {
         /**
          * 代码分离打包文件名称
          */
-        filename: '[name].bundle.js',
+        // 将js文件统一放入一个文件夹中
+        filename: 'scripts/[name].bundle.js',
         path: path.resolve(__dirname, './dist'),
         clean: true,
         assetModuleFilename: 'images/[contenthash][ext]',
