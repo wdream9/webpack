@@ -69,6 +69,9 @@ module.exports = {
         minimizer: [
             new CssMinimizerPlugin()
         ],
+        splitChunks: {
+            chunks: 'all'
+        }
     }
 
 }
