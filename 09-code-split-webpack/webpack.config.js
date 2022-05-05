@@ -70,7 +70,18 @@ module.exports = {
             new CssMinimizerPlugin()
         ],
         splitChunks: {
-            chunks: 'all'
+            // chunks: 'all'
+            cacheGroups:{
+                /**
+                 * 缓存第三方库,
+                 * 第三方打包后存入 vendors 中
+                 */
+                vendor: {
+                    test:/[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all'
+                }
+            }
         }
     }
 
