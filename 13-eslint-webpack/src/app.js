@@ -1,1 +1,1 @@
-console.log("hello world eslint");
+console.log("hello world eslint")
