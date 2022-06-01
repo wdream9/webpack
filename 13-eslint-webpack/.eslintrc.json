@@ -1,0 +1,29 @@
+{
+    /*
+        脚本的运行环境，支持es2021
+    */
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    /* 检查代码格式 遵循哪个规范*/
+    "extends": [
+        "airbnb-base"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    /* 配置规则 ，以及错误级别   0：表示关闭*/
+    "rules": {
+        "no-console":0,  // 不能有console
+        "quotes": 0,    // 必须使用单引号
+        "eol-last":0,   // 必须换行
+        "semi": 0   // 必须分号
+
+    }
+    /*在脚本执行期间访问不在环境中的变量*/
+    // "global":{
+
+    // }
+}
