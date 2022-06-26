@@ -9,9 +9,9 @@ function one() {
     })
 }
 function two() {
-    return new Promise((resolve, inject) => {
+    return new Promise((resolve, reject) => {
         file.readFile('./two.md', (err, data) => {
-            if (err) inject(err);
+            if (err) reject(err);
             resolve(data)
         })
     })
