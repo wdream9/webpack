@@ -1,0 +1,21 @@
+{
+  "name": "27-custom-loader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "markdown-loader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "html-loader": "^3.1.2",
+    "html-webpack-plugin": "^5.5.0",
+    "loader-utils": "^3.2.0",
+    "marked": "^4.0.17",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
