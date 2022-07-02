@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 
 module.exports = {
-    mode: 'development',
+    // mode: 'development',
+    mode: 'production',
     entry: './app.js',
     output: {
         publicPath: '/'
