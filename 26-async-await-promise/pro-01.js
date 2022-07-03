@@ -1,3 +1,7 @@
+/**
+ * promise 专题训练
+ */
+
 // const promise = new Promise((resolve, reject) => {
 //     reject("error");
 //     resolve("success2");
