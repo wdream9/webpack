@@ -195,3 +195,10 @@
 //     console.log('the stack is now empty');
 //     console.log(p);
 // });
+
+
+let Promise1 = new Promise(function (resolve, reject) { })
+let Promise2 = new Promise(function (resolve, reject) { })
+let Promise3 = new Promise(function (resolve, reject) { })
+
+let p = Promise.all([Promise1, Promise2, Promise3])
