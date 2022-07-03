@@ -157,13 +157,37 @@
 //     })
 // },Promise.resolve())
 
-const arr = [1, 2, 3];
-const result = arr.reduce((p, x) => 
-    p.then(
-        new Promise(r => 
-            setTimeout(() => r(console.log(x)), 1000)))
-    , Promise.resolve());
+// const arr = [1, 2, 3];
+// const result = arr.reduce((p, x) => 
+//     p.then(
+//         new Promise(r => 
+//             setTimeout(() => r(console.log(x)), 1000)))
+//     , Promise.resolve());
 
 // const p = Promise.resolve(1).then(console.log('我不关心结果'))
 // console.log(p)
 // p.then((res) => console.log(res))
+
+// const promise1 = new Promise((resolve, reject) => {
+//     setTimeout(resolve, 500, 'one');
+// });
+
+// const promise2 = new Promise((resolve, reject) => {
+//     setTimeout(resolve, 100, 'two');
+// });
+
+// Promise.race([promise1, promise2]).then((value) => {
+//     console.log(value);
+// })
+
+// var resolvedPromisesArray = [Promise.resolve(33), Promise.resolve(44)];
+
+// var p = Promise.race(resolvedPromisesArray);
+// // immediately logging the value of p
+// console.log(p);
+
+// // using setTimeout we can execute code after the stack is empty
+// setTimeout(function () {
+//     console.log('the stack is now empty');
+//     console.log(p);
+// });
